@@ -65,7 +65,8 @@ namespace MIS33K.Models
 
         public decimal CustomerRegularPrice { get; set; }
         public decimal CustomerDiscountedPrice { get; set; }
-        
+
+        public List<BookReview> BookReview { get; set; }
 
         public decimal findDiscount()
         {

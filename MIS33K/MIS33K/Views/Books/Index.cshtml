@@ -73,6 +73,9 @@
             <td>
                 @Html.ActionLink("Details", "Details", new { id = item.BookID })
             </td>
+            <td>
+                @Html.ActionLink("Create a Review", "ReviewABook", new { id = item.BookReview})
+            </td>
         </tr>
     }
 

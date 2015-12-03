@@ -44,5 +44,7 @@ namespace MIS33K.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MIS33K.Models.BookReview> BookReviews { get; set; }
     }
 }

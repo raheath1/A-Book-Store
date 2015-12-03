@@ -179,6 +179,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\BookReview.cs" />
     <Compile Include="Models\Coupon.cs" />
     <Compile Include="Models\CreditCard.cs" />
     <Compile Include="Models\Discount.cs" />
