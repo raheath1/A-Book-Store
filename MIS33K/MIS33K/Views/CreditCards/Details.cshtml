@@ -1,0 +1,98 @@
+﻿@model MIS33K.CreditCard
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CreditCard</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DefaultPayment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DefaultPayment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card1Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card1Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card1Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card1Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card2Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card2Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card2Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card2Num)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card3Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card3Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card3Num)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card3Num)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CreditCardID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

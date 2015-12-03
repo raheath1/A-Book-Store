@@ -1,0 +1,54 @@
+﻿@model IEnumerable<MIS33K.Models.Book>
+
+@{
+    ViewBag.Title = "ProcurementPending";
+}
+
+<h2>Recieved Books</h2>
+
+
+
+<table class=" table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookSKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountonHand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PendingOrder)
+        </th>
+        <th>
+            
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookSKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountonHand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PendingOrder)
+            </td>
+            <td>
+                @Html.ActionLink("Check In This Order", "ProcurementPendingCheckIN", new { id = item.BookID })
+            </td>
+        </tr>
+    }
+    
+</table>
+
+    
+
+

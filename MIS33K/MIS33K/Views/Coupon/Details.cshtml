@@ -1,0 +1,64 @@
+﻿@model MIS33K.Models.Coupon
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+<div class="form-horizontal">
+    <h4>Coupon</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CouponID, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CouponID)
+            @Html.ValidationMessageFor(model => model.CouponID)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CouponTypeVar, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.CouponTypeVar, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.CouponTypeVar, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FreeShipMinimum, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.FreeShipMinimum)
+            @Html.ValidationMessageFor(model => model.FreeShipMinimum)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PercentOff, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.PercentOff)
+            @Html.ValidationMessageFor(model => model.PercentOff)
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CouponEnabled, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DisplayFor(model => model.CouponEnabled)
+            @Html.ValidationMessageFor(model => model.CouponEnabled)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CouponID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

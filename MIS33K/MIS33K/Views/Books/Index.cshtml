@@ -1,0 +1,79 @@
+﻿@model IEnumerable<MIS33K.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Search For Your Book</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+
+    @using (Html.BeginForm("Index", "Books", FormMethod.Get))
+    {
+        <div>
+            Genre: @Html.DropDownList("searchGenre", "All")<br />
+            Title: @Html.TextBox("searchTitle")<br />
+            Author Last Name: @Html.TextBox("searchAuthorLastName") <br />
+            Author First Name: @Html.TextBox("searchAuthorFirstName") <br />
+            SKU: @Html.TextBox("searchSKU")<br />
+
+            <label class="control-label">Search Type:</label>
+            <label class="radio-inline"><input type="radio" name="searchType" value="@SearchTypes.KEYWORD" checked="checked" />Keyword</label>
+            <label class="radio-inline"><input type="radio" name="searchType" value="@SearchTypes.EXACT" />Exact</label><br /><br />
+            <label class="control-label">Make this an OR search: @Html.CheckBox("ORSearch", false, new { @class = "checkbox" })</label> <br /><br />
+            @*this is the search button*@
+            <input type="submit" value="Search" />
+            @*this is the reset button*@
+            @Html.ActionLink("Reset Form", "Index", null, new { @class = "btn btn-active" })
+        </div>
+    }
+
+
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookSKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookSKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorFName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorLName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.BookID })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,123 @@
+﻿@model MIS33K.Models.Book
+
+@{
+    ViewBag.Title = "POrdersConfirm";
+}
+
+<h2>Please Confirm or Edit Your Order</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Book</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+       @Html.HiddenFor(model => model.BookID)
+    @Html.HiddenFor(model => model.CustomerPrice)
+    @Html.HiddenFor(model => model.PendingOrder)
+    @Html.HiddenFor(model => model.PublicationDate)
+    @Html.HiddenFor(model => model.PurchaseHistory)
+    @Html.HiddenFor(model => model.ReoderPoint)
+    @Html.HiddenFor(model => model.Title)
+    @Html.HiddenFor(model => model.BookSKU)
+    @Html.HiddenFor(model => model.ProfitMargin)
+    @Html.HiddenFor(model => model.OrderAmountRecieved)
+    @Html.HiddenFor(model => model.Genre)
+    @Html.HiddenFor(model => model.CountonHand)
+    @Html.HiddenFor(model => model.AuthorLName)
+    @Html.HiddenFor(model => model.AuthorFName)
+    @Html.HiddenFor(model => model.cost)
+    @Html.HiddenFor(model => model.ProcurementShoppingCart)
+        @Html.HiddenFor(model => model.CustomerRegularPrice)
+        @Html.HiddenFor(model => model.CustomerDiscountedPrice)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BookSKU, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.BookSKU) 
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Title)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuthorFName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.AuthorFName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.AuthorLName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.AuthorLName)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Genre, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.Genre)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProfitMargin, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.ProfitMargin)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.cost, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.cost)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountonHand, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.CountonHand)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReoderPoint, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.ReoderPoint)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ProcurementShoppingCart, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ProcurementShoppingCart, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ProcurementShoppingCart, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Order List", "POrdersList")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

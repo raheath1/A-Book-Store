@@ -1,0 +1,91 @@
+﻿@model MIS33K.Models.Coupon
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Coupon</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CouponID, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CouponID)
+                @Html.ValidationMessageFor(model => model.CouponID)
+            </div>
+        </div>
+
+        <div id="CouponType">
+            <div class="form-group">
+                @Html.LabelFor(model => model.CouponTypeVar, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EnumDropDownListFor(model => model.CouponTypeVar, htmlAttributes: new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.CouponTypeVar, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        @*<script type="text/javascript" src="Scripts.js">
+                $(#PercentOff).change(function ShowHideTextBox() {
+                    if($(#CouponType).val()==="FreeShipMinimum"
+                        $(#FreeShip).Show();
+                    $(#PercentOff).Hide();
+                }
+                else{
+                        $(#PercentOff).Show();
+                }
+                });
+            </script>*@
+
+
+        <div id="FreeShip">
+            <div class="form-group">
+                @Html.LabelFor(model => model.FreeShipMinimum, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.FreeShipMinimum)
+                    @Html.ValidationMessageFor(model => model.FreeShipMinimum)
+                </div>
+            </div>
+        </div>
+
+        <div id="PercentOff">
+            <div class="form-group">
+                @Html.LabelFor(model => model.PercentOff, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PercentOff)
+                    @Html.ValidationMessageFor(model => model.PercentOff)
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CouponEnabled, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CouponEnabled)
+                @Html.ValidationMessageFor(model => model.CouponEnabled)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

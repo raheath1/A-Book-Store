@@ -1,0 +1,63 @@
+﻿@model IEnumerable<MIS33K.Models.Coupon>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Index</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CouponID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CouponTypeVar)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.FreeShipMinimum)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PercentOff)
+            </th>
+
+
+            <th>
+                @Html.DisplayNameFor(model => model.CouponEnabled)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CouponID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CouponTypeVar)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.FreeShipMinimum)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.PercentOff)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CouponEnabled)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CouponID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CouponID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CouponID })
+                </td>
+            </tr>
+        }
+
+    </table>

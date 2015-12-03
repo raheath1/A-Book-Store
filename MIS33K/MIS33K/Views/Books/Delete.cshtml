@@ -1,0 +1,168 @@
+﻿@model MIS33K.Models.Book
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Book</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BookSKU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookSKU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorFName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorFName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorLName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorLName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InStock)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InStock)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountonHand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountonHand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseHistory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseHistory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfitMargin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfitMargin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReorderManual)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderManual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReorderAutomatic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReorderAutomatic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BookReviewID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BookReviewID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Genre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitPrice)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,113 @@
+﻿
+@model IEnumerable<MIS33K.Models.Book>
+    @{
+        ViewBag.Title = "POrdersList";
+    }
+   
+    <h2>Your Procurement Orders</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookSKU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorFName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AuthorLName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Genre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProfitMargin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cost)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CountonHand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReoderPoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProcurementShoppingCart)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model)  {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookSKU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorFName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AuthorLName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.ProfitMargin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cost)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CountonHand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReoderPoint)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProcurementShoppingCart)
+            </td>
+       
+
+        <td>
+            @Html.ActionLink("Confirm Order", "POrdersConfirm", new { id=item.BookID }) 
+        </td>
+    
+    </tr>
+}
+
+
+            @*@Html.HiddenFor(model => model.BookID)
+            @Html.HiddenFor(model => model.BookReviewID)
+            @Html.HiddenFor(model => model.CustomerPrice)
+            @Html.HiddenFor(model => model.PendingOrder)
+            @Html.HiddenFor(model => model.PublicationDate)
+            @Html.HiddenFor(model => model.PurchaseHistory)
+            @Html.HiddenFor(model => model.ReoderPoint)
+            @Html.HiddenFor(model => model.Title)
+            @Html.HiddenFor(model => model.CustomerRegularPrice)
+            @Html.HiddenFor(model => model.CustomerDiscountedPrice)
+            @Html.HiddenFor(model => model.BookSKU)
+            @Html.HiddenFor(model => model.ProfitMargin)
+            @Html.HiddenFor(model => model.OrderAmountRecieved)
+            @Html.HiddenFor(model => model.Genre)
+            @Html.HiddenFor(model => model.CountonHand)
+            @Html.HiddenFor(model => model.AuthorLName)
+            @Html.HiddenFor(model => model.AuthorFName)
+            @Html.HiddenFor(model => model.InStock)
+           
+            @Html.HiddenFor(model => model.cost)
+            @Html.HiddenFor(model => model.ProcurementShoppingCart)*@
+      

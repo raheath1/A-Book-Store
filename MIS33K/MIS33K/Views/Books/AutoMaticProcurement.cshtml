@@ -1,0 +1,116 @@
+﻿@model IEnumerable<MIS33K.Models.Book>
+
+@{
+    ViewBag.Title = "Procurement";
+}
+
+<h2>Automatic Procurement</h2>
+@using (Html.BeginForm())
+{ 
+    
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BookSKU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorFName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorLName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CountonHand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReoderPoint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProcurementShoppingCart)
+        </th>
+        <th></th>
+    </tr>
+
+
+
+@foreach (var item in Model) 
+{
+    <tr>
+        <td class="form-group">
+            @Html.HiddenFor(modelItem => item.BookID)
+            
+            @Html.HiddenFor(modelItem => item.CustomerPrice)
+            @Html.HiddenFor(model => model.CustomerRegularPrice)
+            @Html.HiddenFor(model => model.CustomerDiscountedPrice)
+            @Html.HiddenFor(modelItem => item.PendingOrder)
+            @Html.HiddenFor(modelItem => item.PublicationDate)
+            @Html.HiddenFor(modelItem => item.PurchaseHistory)
+            @Html.HiddenFor(modelItem => item.ReoderPoint)
+            @Html.HiddenFor(modelItem => item.Title)
+          
+            @Html.HiddenFor(modelItem => item.BookSKU)
+            @Html.HiddenFor(modelItem => item.ProfitMargin)
+            @Html.HiddenFor(modelItem => item.OrderAmountRecieved)
+            @Html.HiddenFor(modelItem => item.Genre)
+            @Html.HiddenFor(modelItem => item.CountonHand)
+            @Html.HiddenFor(modelItem => item.AuthorLName)
+            @Html.HiddenFor(modelItem => item.AuthorFName)
+          
+            @Html.HiddenFor(modelItem => item.cost)
+            @Html.DisplayFor(modelItem => item.BookSKU)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorFName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorLName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CountonHand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReoderPoint)
+        </td>
+        <td class=" form-group">
+            @Html.EditorFor(modelItem => item.cost)
+        </td>
+        <td class="form-group">
+            @Html.EditorFor(modelItem => item.ProcurementShoppingCart)
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookID })
+        </td>*@
+    </tr> 
+}
+
+</table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Procure These Books" class="btn btn-default" />
+        </div>
+    </div>
+    
+}
+
+
+@Html.ActionLink("Order Books", "AutomaticConfirm")
+
+

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<MIS33K.CreditCard>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<h2>Select Payment Method</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Select Card
+        </th>
+        <th>
+            Card Type
+        </th>
+        <th>
+            Card Number
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                <input type="radio" name="Default Payment" value="Card1" />Card 1
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card1Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card1Num)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CreditCardID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CreditCardID })
+            </td>
+        </tr>
+    }
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <input type="radio" name="Default Payment" value="Card2" />Card 2
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card2Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card2Num)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CreditCardID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CreditCardID })
+            </td>
+        </tr>
+    }
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <input type="radio" name="Default Payment" value="Card3" />Card 3
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card3Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Card3Num)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CreditCardID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CreditCardID })
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+
+<p class="button">
+    @Html.ActionLink("Proceed to Review Order >>", "ProceedToReviewOrder",
+        "ShoppingCart")
+</p>
+
+

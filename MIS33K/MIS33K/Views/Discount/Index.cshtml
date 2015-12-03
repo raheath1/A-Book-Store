@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MIS33K.ViewModels.DiscountCreateViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerDiscountedPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountEnabled)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SelectedBook)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerDiscountedPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountEnabled)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SelectedBook)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DiscountCreateViewModelID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DiscountCreateViewModelID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DiscountCreateViewModelID })
+        </td>
+    </tr>
+}
+
+</table>
